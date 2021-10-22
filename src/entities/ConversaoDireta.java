@@ -10,7 +10,7 @@ public class ConversaoDireta {
         String nome2;
         float valor2;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Qual o nome da moeda para o qual a quantia inserida será convertida.");
+        System.out.println("Qual o nome da moeda que você possui?");
         nome1 = sc.nextLine();
         System.out.println("Qual o nome da moeda que vai ser convertida?");
         nome2 = sc.nextLine();
@@ -18,7 +18,7 @@ public class ConversaoDireta {
         valor1 = sc.nextFloat();
         System.out.println("Insira a quantia a ser convertida:");
         valor2 = sc.nextFloat();
-        System.out.println(valor2 + "em " + nome2 + " equivale a "+ valor1*valor2 + " de " + nome1);
+        System.out.println(valor2 + " em " + nome2 + " equivale a "+ valor1*valor2 + " de " + nome1);
         sc.close();
     }
 }
