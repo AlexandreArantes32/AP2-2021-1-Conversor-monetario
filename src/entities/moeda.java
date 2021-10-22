@@ -5,9 +5,15 @@ public class moeda {
     String pais;
     float valor;
 
-    public float conversao(float valor){
-        float quantia;
-        quantia = valor*this.valor;
-        return quantia;
+    public String getNome() {
+        return nome;
+    }
+
+    public float getValor() {
+        return valor;
+    }
+
+    public String getPais() {
+        return pais;
     }
 }
