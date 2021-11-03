@@ -10,6 +10,7 @@ public class ConversaoSistema{
 
     public static void principal() {
         Scanner sc = new Scanner(System.in);
+        ConversaoSistema.adicionaMoeda();
         int opcao;
         boolean menu = true;
         try {
@@ -84,7 +85,7 @@ public class ConversaoSistema{
             case 2 -> {
                 System.out.println("Qual o país da moeda pra ser atualizada!");
                 nome1 = sc.nextLine();
-                for( int i =0;i < listaDemoedas.size();i++){
+                for( int i = 0;i < listaDemoedas.size();i++){
                     if(listaDemoedas.get(i).getPais().equals(nome1)){
                         aux = i;
                     }
@@ -106,24 +107,25 @@ public class ConversaoSistema{
                 }
             }
             case 3 -> {
-                for (int i = 0; i < listaDemoedas.size(); i++) {
-                    System.out.println("\nNome: " + listaDemoedas.get(i).getNome() + "\n");
-                    System.out.println("País: " + listaDemoedas.get(i).getPais() + "\n");
-                    System.out.println("Valor universal: " + listaDemoedas.get(i).getValor() + " ");
+                int qualquer;
+                for (moeda listaDemoeda : listaDemoedas) {
+                    System.out.println("\nNome: " + listaDemoeda.getNome() + "  "+"País: " + listaDemoeda.getPais() + "\n"+"Valor universal: " + listaDemoeda.getValor() + " ");
                 }
+                System.out.println("Digite qualquer número pra sair!");
+                qualquer = sc.nextInt();
+                sc.nextLine();
             }
             case 4 -> {
                 int qualquer;
                 System.out.println("Qual o nome da moeda que deseja procurar?");
                 nome1 = sc.nextLine();
-                for (int i = 0; i < listaDemoedas.size(); i++) {
-                    if (listaDemoedas.get(i).getNome().equals(nome1)) {
-                        System.out.println("\nNome: " + listaDemoedas.get(i).getNome() + "\n");
-                        System.out.println("País: " + listaDemoedas.get(i).getPais() + "\n");
-                        System.out.println("Valor universal: " + listaDemoedas.get(i).getValor() + " ");
+                for (moeda listaDemoeda : listaDemoedas) {
+                    if (listaDemoeda.getNome().equals(nome1)) {
+                        System.out.println("\nNome: " + listaDemoeda.getNome() + "País: " + listaDemoeda.getPais());
+                        System.out.println("Valor universal: " + listaDemoeda.getValor());
                     }
                 }
-                System.out.println("Digite qualquer coisa pra sair!");
+                System.out.println("Digite qualquer número pra sair!");
                 qualquer = sc.nextInt();
                 sc.nextLine();
             }
@@ -155,6 +157,38 @@ public class ConversaoSistema{
             }
         }
         aux = (listaDemoedas.get(valor1).getValor()/listaDemoedas.get(valor3).getValor())*valor2;
-        System.out.println("\n" + valor2 + " em " + nome2 + " equivale a "+ aux + " de " + nome1);
+        System.out.printf("%.2f em %s equivale a %.2f de %s.",valor2,nome2,aux,nome1);
+    }
+
+    public static void adicionaMoeda(){
+        if(listaDemoedas.isEmpty()) {
+            moeda dolar = new moeda();
+            dolar.setMoeda("Dolár", "Estados Unidos", (float) 5.64);
+            listaDemoedas.add(dolar);
+
+            moeda euro = new moeda();
+            euro.setMoeda("Euro", "União Europeia", (float) 6.51);
+            listaDemoedas.add(euro);
+
+            moeda real = new moeda();
+            real.setMoeda("Real", "Brasil", (float) 1);
+            listaDemoedas.add(real);
+
+            moeda iene = new moeda();
+            iene.setMoeda("Iene", "Japão", (float) 0.049);
+            listaDemoedas.add(iene);
+
+            moeda libra = new moeda();
+            libra.setMoeda("Libra Esterlina", "Reino Unido", (float) 7.71);
+            listaDemoedas.add(libra);
+
+            moeda renminbi = new moeda();
+            renminbi.setMoeda("Renminbi", "China", (float) 0.88);
+            listaDemoedas.add(renminbi);
+
+            moeda bitcoin = new moeda();
+            bitcoin.setMoeda("Bitcoin", "Moeda virtual", (float) 34037.78);
+            listaDemoedas.add(bitcoin);
+        }
     }
 }
