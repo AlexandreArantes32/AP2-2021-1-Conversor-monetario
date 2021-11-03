@@ -18,7 +18,8 @@ public class ConversaoDireta {
         valor1 = sc.nextFloat();
         System.out.println("Insira a quantia a ser convertida:");
         valor2 = sc.nextFloat();
-        System.out.println(valor2 + " em " + nome2 + " equivale a "+ valor1*valor2 + " de " + nome1);
-        sc.close();
+        System.out.printf("%.2f em %s equivale a %.2f de %s.",valor2,nome2,valor1*valor2,nome1);
+        sc.nextLine();
+
     }
 }

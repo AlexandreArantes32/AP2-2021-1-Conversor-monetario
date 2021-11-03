@@ -5,6 +5,12 @@ public class moeda {
     String pais;
     float valor;
 
+    public void setMoeda(String nome, String pais, float valor) {
+        this.nome = nome;
+        this.pais = pais;
+        this.valor = valor;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -16,4 +22,5 @@ public class moeda {
     public String getPais() {
         return pais;
     }
+
 }

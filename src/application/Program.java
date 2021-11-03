@@ -36,7 +36,7 @@ public class Program {
             }
         }
         catch (NoSuchElementException e){
-            System.out.println("pronto" + e.getMessage());
+            System.out.println("Finalizando" + e.getMessage());
 
         }
     }
